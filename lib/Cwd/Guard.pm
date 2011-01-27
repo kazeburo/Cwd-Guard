@@ -23,11 +23,11 @@ sub new {
         chdir $cwd;
     };
     defined $dir ? chdir($dir) : chdir();
-    bless \$callback, $class;
+    bless $callback, $class;
 }
 
 sub DESTROY {
-    ${$_[0]}->();
+    $_[0]->();
 }
 
 
