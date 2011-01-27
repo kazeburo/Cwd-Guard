@@ -36,7 +36,7 @@ __END__
 
 =head1 NAME
 
-Cwd::Guard - Temporary changing working directory
+Cwd::Guard - Temporary changing working directory (chdir)
 
 =head1 SYNOPSIS
 
