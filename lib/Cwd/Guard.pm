@@ -72,6 +72,8 @@ Masahiro Nagano E<lt>kazeburo {at} gmail.comE<gt>
 
 =head1 SEE ALSO
 
+L<File::chdir>, L<File::pushd>
+
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify
