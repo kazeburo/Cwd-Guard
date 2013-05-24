@@ -1,0 +1,43 @@
+# NAME
+
+Cwd::Guard - Temporary changing working directory (chdir)
+
+# SYNOPSIS
+
+    use Cwd::Guard qw/cwd_guard/;
+    use Cwd;
+
+    my $dir = getcwd;
+    MYBLOCK: {
+        my $guard = cwd_guard('/tmp/xxxxx');
+        # chdir to /tmp/xxxxx
+    }
+    # back to $dir
+
+
+
+# DESCRIPTION
+
+CORE::chdir Cwd:: Guard can change the current directory (chdir) using a limited scope.
+
+# FUNCTIONS
+
+- cwd\_guard($dir);
+
+    chdir to $dir and returns Cwd::Guard object. return to current working directory, if this object destroyed.
+    if failed to chdir, Cwd::Guard die immediately. 
+
+# AUTHOR
+
+Masahiro Nagano <kazeburo {at} gmail.com>
+
+# SEE ALSO
+
+[File::chdir](http://search.cpan.org/perldoc?File::chdir), [File::pushd](http://search.cpan.org/perldoc?File::pushd)
+
+# LICENSE
+
+Copyright (C) Masahiro Nagano
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
