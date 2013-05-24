@@ -3,10 +3,10 @@ package Cwd::Guard;
 use strict;
 use warnings;
 use Cwd qw/getcwd/;
-use autodie qw/chdir/;
 use parent 'Exporter';
 
 our @EXPORT_OK = qw/cwd_guard/;
+our $Error;
 
 our $VERSION = '0.02';
 
@@ -22,7 +22,9 @@ sub new {
     my $callback = sub {
         chdir $cwd;
     };
-    defined $dir ? chdir($dir) : chdir();
+    my $result = defined $dir ? chdir($dir) : chdir();
+    $Error = $!;
+    return unless $result;
     bless $callback, $class;
 }
 
@@ -45,7 +47,7 @@ Cwd::Guard - Temporary changing working directory (chdir)
 
   my $dir = getcwd;
   MYBLOCK: {
-      my $guard = cwd_guard('/tmp/xxxxx');
+      my $guard = cwd_guard('/tmp/xxxxx') or die "failed chdir: $Cwd::Guard::Error";
       # chdir to /tmp/xxxxx
   }
   # back to $dir
@@ -62,7 +64,7 @@ CORE::chdir Cwd:: Guard can change the current directory (chdir) using a limited
 =item cwd_guard($dir);
 
 chdir to $dir and returns Cwd::Guard object. return to current working directory, if this object destroyed.
-if failed to chdir, Cwd::Guard die immediately. 
+if failed to chdir, cwd_guard return undefined value. You can get error messages with $Gwd::Guard::Error.
 
 =back
 
