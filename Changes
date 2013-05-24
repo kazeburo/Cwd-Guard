@@ -2,6 +2,10 @@ Revision history for Perl extension Cwd::Guard
 
 {{$NEXT}}
 
+0.03 2013-05-24T00:37:42Z
+
+        - fix packaging issue. remove Makefile.PL 
+
 0.02 2013-05-24T00:29:31Z
 
         - add Copyright line to POD (RT:85580)
