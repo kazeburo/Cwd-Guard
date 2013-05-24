@@ -9,7 +9,7 @@ Cwd::Guard - Temporary changing working directory (chdir)
 
     my $dir = getcwd;
     MYBLOCK: {
-        my $guard = cwd_guard('/tmp/xxxxx');
+        my $guard = cwd_guard('/tmp/xxxxx') or die "failed chdir: $Cwd::Guard::Error";
         # chdir to /tmp/xxxxx
     }
     # back to $dir
@@ -25,7 +25,7 @@ CORE::chdir Cwd:: Guard can change the current directory (chdir) using a limited
 - cwd\_guard($dir);
 
     chdir to $dir and returns Cwd::Guard object. return to current working directory, if this object destroyed.
-    if failed to chdir, Cwd::Guard die immediately. 
+    if failed to chdir, cwd\_guard return undefined value. You can get error messages with $Gwd::Guard::Error.
 
 # AUTHOR
 
