@@ -1,4 +1,5 @@
+requires 'parent';
+requires 'Exporter';
 on build => sub {
-    requires 'ExtUtils::MakeMaker', '6.42';
     requires 'Test::More';
 };
