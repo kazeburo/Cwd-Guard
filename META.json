@@ -59,7 +59,7 @@
          "web" : "https://github.com/kazeburo/Cwd-Guard"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
       "Masahiro Nagano <kazeburo@gmail.com>"
    ]

@@ -8,7 +8,7 @@ use parent 'Exporter';
 
 our @EXPORT_OK = qw/cwd_guard/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub cwd_guard {
     my $dir = shift;
