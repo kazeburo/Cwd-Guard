@@ -2,6 +2,11 @@ Revision history for Perl extension Cwd::Guard
 
 {{$NEXT}}
 
+0.04 2013-06-03T02:04:02Z
+
+        - use fchdir when available (ap++)
+          It's reliable and faster (http://linux.die.net/man/3/getcwd)
+
 0.03 2013-05-24T00:37:42Z
 
         - fix packaging issue. remove Makefile.PL 
