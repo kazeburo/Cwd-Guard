@@ -2,13 +2,15 @@ package Cwd::Guard;
 
 use strict;
 use warnings;
-use Cwd qw/getcwd/;
 use parent 'Exporter';
 
 our @EXPORT_OK = qw/cwd_guard/;
 our $Error;
 
 our $VERSION = '0.03';
+
+use constant USE_FCHDIR => eval { opendir my $dh, '.'; chdir $dh; 1 };
+use if !USE_FCHDIR, Cwd => qw/getcwd/;
 
 sub cwd_guard {
     my $dir = shift;
@@ -18,7 +20,8 @@ sub cwd_guard {
 sub new {
     my $class = shift;
     my $dir = shift;
-    my $cwd = getcwd();
+    my $cwd;
+    if (USE_FCHDIR) { opendir $cwd, '.' } else { $cwd = getcwd() }
     my $callback = sub {
         chdir $cwd;
     };
