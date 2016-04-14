@@ -4,5 +4,5 @@ requires 'if';
 requires 'Cwd';
 on build => sub {
     requires 'Test::More';
-    required 'Test::Requires';
+    requires 'Test::Requires';
 };
