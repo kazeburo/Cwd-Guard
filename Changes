@@ -2,6 +2,10 @@ Revision history for Perl extension Cwd::Guard
 
 {{$NEXT}}
 
+0.05 2016-04-14T02:47:15Z
+
+        - add a new test (Thank you eserte)
+
 0.04 2013-06-03T02:04:02Z
 
         - use fchdir when available (ap++)

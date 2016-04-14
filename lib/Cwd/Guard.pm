@@ -7,7 +7,7 @@ use parent 'Exporter';
 our @EXPORT_OK = qw/cwd_guard/;
 our $Error;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use constant USE_FCHDIR => eval { opendir my $dh, '.'; chdir $dh; 1 };
 use if !USE_FCHDIR, Cwd => qw/getcwd/;

@@ -28,7 +28,8 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : "0"
+            "Test::More" : "0",
+            "Test::Requires" : "0"
          }
       },
       "configure" : {
@@ -66,7 +67,7 @@
          "web" : "https://github.com/kazeburo/Cwd-Guard"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_contributors" : [
       "Aristotle Pagaltzis <pagaltzis@gmx.de>",
       "Slaven Rezic <slaven.rezic@idealo.de>",
