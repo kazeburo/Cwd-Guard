@@ -14,8 +14,6 @@ Cwd::Guard - Temporary changing working directory (chdir)
     }
     # back to $dir
 
-
-
 # DESCRIPTION
 
 CORE::chdir Cwd:: Guard can change the current directory (chdir) using a limited scope.
@@ -33,7 +31,7 @@ Masahiro Nagano <kazeburo {at} gmail.com>
 
 # SEE ALSO
 
-[File::chdir](http://search.cpan.org/perldoc?File::chdir), [File::pushd](http://search.cpan.org/perldoc?File::pushd)
+[File::chdir](https://metacpan.org/pod/File::chdir), [File::pushd](https://metacpan.org/pod/File::pushd)
 
 # LICENSE
 
